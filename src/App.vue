@@ -1,7 +1,16 @@
 <script>
-export default {};
+import AppHeader from "./components/AppHeader.vue";
+export default {
+  components: {
+    AppHeader,
+  },
+};
 </script>
-<template>
-  <div>Everlead</div>
+<template lang="">
+  <div>
+    <AppHeader></AppHeader>
+  </div>
 </template>
-<style scoped></style>
+<style lang="scss">
+@use "./styles/generals.scss" as *;
+</style>
