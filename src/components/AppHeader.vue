@@ -76,17 +76,25 @@ export default {
 };
 </script>
 <template lang="">
-  <div>
-    <header class="container">
-      <div class="navbar">
-        <div class="logo">
-          <a href="#">
-            <img src="/public/img/logo-img-01.png" alt="" class="logo" />
-          </a>
+  <header class="container-fluid">
+    <div class="row mx-5">
+      <div class="col">
+        <div class="navbar p-0">
+          <div class="logo">
+            <a href="#">
+              <img src="/public/img/logo-img-01.png" alt="" class="logo" />
+            </a>
+          </div>
+          <AppNavbar :menuItems="menuItems"></AppNavbar>
         </div>
-        <AppNavbar :menuItems="menuItems"></AppNavbar>
       </div>
-    </header>
-  </div>
+    </div>
+  </header>
 </template>
-<style lang="scss"></style>
+<style lang="scss">
+header {
+  position: fixed;
+  z-index: 3;
+  background-color: white;
+}
+</style>

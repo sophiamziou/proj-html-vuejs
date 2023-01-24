@@ -16,7 +16,7 @@ export default {
         v-for="(item, index) in menuItems"
         :key="index"
         :class="item.active ? 'active' : ' '"
-        class="nav-item m-3 lista"
+        class="nav-item lista"
       >
         <div class="dropdown_">
           <div class="dropbtn">
@@ -90,5 +90,9 @@ export default {
 
 .dropdown_:hover .dropdown_content {
   display: block;
+}
+
+.lista {
+  line-height: 50px;
 }
 </style>
