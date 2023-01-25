@@ -2,9 +2,7 @@
 export default {};
 </script>
 <template lang="">
-  <main>
-    <h1>content</h1>
-  </main>
+  <main></main>
 </template>
 <style lang="scss">
 main {

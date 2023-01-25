@@ -12,8 +12,8 @@ export default {
         {
           title: "Twitter",
           content: [
-            "@UpTheIrons1978 did not find it, but created - https://t.co/joSV0jD3Yd Qi Blocks have 48 custom blocks for free",
-            "@mrwebreviews This could be caused by some 3rd party plugin, however, as we do not have enough information about se… https://t.co/YxmWae8sUV",
+            `<div><i class="fa-brands fa-twitter"></i></div><div><a href="#">@UpTheIrons1978</a> did not find it, but created - <a href="https://t.co/joSV0jD3Yd">https://t.co/joSV0jD3Yd</a> Qi Blocks have 48 custom blocks for free</div>`,
+            `<div><i class="fa-brands fa-twitter"></i></div><div><a href="#">@mrwebreviews</a> This could be caused by some 3rd party plugin, however, as we do not have enough information about se… <a href="https://t.co/YxmWae8sUVx">https://t.co/YxmWae8sUVx</a></div>`,
           ],
         },
         {
@@ -29,9 +29,9 @@ export default {
         {
           title: "Contact me",
           content: [
-            " 457 BigBlue Street, NY 10013",
-            "(315) 5512-2579 ",
-            "everlead@qodeinteractive.com",
+            `<div><i class="fa-solid fa-location-dot"></i> 457 BigBlue Street, NY 10013</div>`,
+            `<div><i class="fa-solid fa-phone"></i> (315) 5512-2579</div>`,
+            `<div><i class="fa-regular fa-envelope"></i> everlead@qodeinteractive.com</div>`,
           ],
         },
       ],
@@ -42,15 +42,14 @@ export default {
 <template lang="">
   <footer>
     <div class="container-fluid footer">
-      <div class="row">
-        <div class="col my-5" v-for="(item, index) in footerItems">
+      <div class="row p-5">
+        <div class="col m-2" v-for="(item, index) in footerItems">
           <p>
             {{ item.title }}
           </p>
+          <div class="line"></div>
           <ul>
-            <li v-for="(item, index) in item.content">
-              {{ item }}
-            </li>
+            <li v-html="item" v-for="(item, index) in item.content"></li>
           </ul>
         </div>
       </div>
@@ -59,7 +58,6 @@ export default {
       <div class="row">
         <div class="col">
           <a href="#">© 2019 Qode Interactive, All Rights Reserved</a>
-          <a href="#"></a>
         </div>
       </div>
     </div>
@@ -75,18 +73,29 @@ footer {
       font-family: "Libre Baskerville", serif;
       font-size: 19px;
       font-weight: 700;
-      padding: 20px 0px;
-      border-bottom: 1px solid #ff4612;
+    }
+    .line {
+      margin: 20px 0px;
+      width: 32px;
+      height: 1px;
+      background-color: #ff4612;
     }
     ul {
       color: grey;
       padding: 0;
       li {
+        display: flex;
         list-style: none;
         margin: 8px 0;
+        a {
+          color: #ccc;
+        }
+        i {
+          color: #ff4612;
+          margin-right: 15px;
+        }
       }
       li:hover {
-        color: white;
         cursor: pointer;
       }
     }

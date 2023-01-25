@@ -16,7 +16,7 @@ export default {
         v-for="(item, index) in menuItems"
         :key="index"
         :class="item.active ? 'active' : ' '"
-        class="nav-item lista"
+        class="nav-item mx-2"
       >
         <div class="dropdown_">
           <div class="dropbtn">
@@ -35,6 +35,30 @@ export default {
           </div>
         </div>
       </li>
+      <li class="nav-item mx-2">
+        <div class="dropdown_">
+          <div class="dropbtn menuitem">ELEMENTS</div>
+          <div class="dropdown_content right">
+            <div class="container">
+              <div class="row">
+                <div class="col text-light" v-for="(item, index) in Elements">
+                  <div>
+                    <p>
+                      {{ item.title }}
+                    </p>
+                    <ul>
+                      <li
+                        v-html="item"
+                        v-for="(item, index) in item.content"
+                      ></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
     </ul>
   </nav>
 </template>
@@ -47,6 +71,7 @@ export default {
   font-weight: 600;
   text-decoration: none;
   color: black;
+  line-height: 50px;
 }
 .menuitem:hover {
   color: #ff4162;
@@ -77,6 +102,9 @@ export default {
   padding: 30px 15px;
 }
 
+.right {
+  right: 0;
+}
 .dropdown_content a {
   color: grey;
   padding: 6px 16px;
@@ -90,9 +118,5 @@ export default {
 
 .dropdown_:hover .dropdown_content {
   display: block;
-}
-
-.lista {
-  line-height: 50px;
 }
 </style>

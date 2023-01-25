@@ -62,10 +62,56 @@ export default {
             "Event types",
           ],
         },
+      ],
+      Elements: [
         {
-          label: "ELEMENTS",
-          url: "#",
-          active: false,
+          title: "Classic",
+          content: [
+            "Accordion",
+            "Buttons",
+            "Clients",
+            "Contact from",
+            "Icon with text",
+            "Image gallery",
+          ],
+        },
+        {
+          title: "Presentational",
+          content: [
+            "Booked calendar",
+            "Event list",
+            "Event list slider",
+            "Blog list",
+            "Portfolio list",
+            "Shop list",
+            "Team",
+            "Testimonials",
+          ],
+        },
+        {
+          title: "Infographic",
+          content: [
+            "Counters",
+            "Countdown",
+            "Google maps",
+            "Pie chart",
+            "Progress bar",
+            "Pricing tables",
+            "Video button",
+          ],
+        },
+        {
+          title: "Typographic",
+          content: [
+            "Headings",
+            "Columns",
+            "Blockquote",
+            "Custom font",
+            "Dropcaps",
+            "Section title",
+            "Separators",
+            "Highlights",
+          ],
         },
       ],
     };
@@ -82,10 +128,10 @@ export default {
         <div class="navbar p-0">
           <div class="logo">
             <a href="#">
-              <img src="/public/img/logo-img-01.png" alt="" class="logo" />
+              <img src="/img/logo-img-01.png" alt="" class="logo" />
             </a>
           </div>
-          <AppNavbar :menuItems="menuItems"></AppNavbar>
+          <AppNavbar :menuItems="menuItems" :Elements="Elements"></AppNavbar>
         </div>
       </div>
     </div>
