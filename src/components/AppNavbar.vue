@@ -63,6 +63,13 @@ export default {
           </div>
         </div>
       </li>
+      <li class="nav-item mx-2">
+        <div class="menuitem h-100 position-relative">
+          <i
+            class="fa-solid fa-magnifying-glass position-absolute top-50 start-50 translate-middle fs-5"
+          ></i>
+        </div>
+      </li>
     </ul>
   </nav>
 </template>
@@ -79,6 +86,7 @@ export default {
 }
 .menuitem:hover {
   color: #ff4162;
+  cursor: pointer;
 }
 .active {
   color: #ff4162;

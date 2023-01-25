@@ -141,6 +141,5 @@ export default {
 header {
   position: fixed;
   z-index: 3;
-  background-color: white;
 }
 </style>
