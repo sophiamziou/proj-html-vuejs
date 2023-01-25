@@ -2,6 +2,7 @@
 export default {
   props: {
     menuItems: Array,
+    Elements: Array,
   },
   data() {
     return {};
@@ -41,12 +42,15 @@ export default {
           <div class="dropdown_content right">
             <div class="container">
               <div class="row">
-                <div class="col text-light" v-for="(item, index) in Elements">
+                <div
+                  class="col text-light w-100"
+                  v-for="(item, index) in Elements"
+                >
                   <div>
-                    <p>
+                    <p class="elem_title">
                       {{ item.title }}
                     </p>
-                    <ul>
+                    <ul class="elem_list">
                       <li
                         v-html="item"
                         v-for="(item, index) in item.content"
@@ -118,5 +122,30 @@ export default {
 
 .dropdown_:hover .dropdown_content {
   display: block;
+}
+
+.elem_title {
+  font-family: "Libre Baskerville", serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+.elem_list {
+  color: grey;
+  padding: 0;
+  li {
+    display: flex;
+    list-style: none;
+    margin: 8px 0;
+    a {
+      color: #ccc;
+    }
+    i {
+      color: #ff4612;
+      margin-right: 15px;
+    }
+  }
+  li:hover {
+    cursor: pointer;
+  }
 }
 </style>
