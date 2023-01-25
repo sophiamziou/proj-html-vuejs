@@ -116,6 +116,7 @@ export default {
 
 .right {
   right: 0;
+  width: 90vw;
 }
 .dropdown_content a {
   color: grey;
