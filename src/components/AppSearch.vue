@@ -14,7 +14,9 @@ export default {};
             placeholder="Search..."
             aria-label="Search"
           />
-          <i class="fa-solid fa-xmark fs-5 mx-2"></i>
+          <div>
+            <i class="fa-solid fa-xmark fs-5 mx-2"></i>
+          </div>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export default {
 
 <template lang="">
   <nav class="h-100">
-    <ul class="nav nav-pills h-100">
+    <ul class="nav nav-pills justify-content-end h-100">
       <li
         v-for="(item, index) in menuItems"
         :key="index"
@@ -64,7 +64,7 @@ export default {
         </div>
       </li>
       <li class="nav-item mx-2">
-        <div class="menuitem h-100 position-relative">
+        <div class="menuitem h-100 position-relative" @click="$emit('change')">
           <i
             class="fa-solid fa-magnifying-glass position-absolute top-50 start-50 translate-middle fs-5"
           ></i>

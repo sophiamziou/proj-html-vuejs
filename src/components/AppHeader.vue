@@ -8,6 +8,7 @@ export default {
   },
   data() {
     return {
+      togglesearch: false,
       menuItems: [
         {
           label: "HOMES",
@@ -122,32 +123,76 @@ export default {
     };
   },
   methods: {
-    changeHeader() {
-      this.AppSearch.style.display = "none";
+    changetoggle() {
+      this.togglesearch = !this.togglesearch;
     },
   },
 };
 </script>
 <template lang="">
-  <header class="container-fluid">
-    <div class="row mx-5 h-100">
-      <div class="col">
-        <div class="navbar p-0 h-100">
-          <div class="logo">
-            <a href="#">
-              <img src="/img/logo-img-01.png" alt="" class="logo" />
-            </a>
+  <header class="w-100">
+    <div
+      class="container-fluid"
+      v-bind:class="!togglesearch ? 'd-block' : 'd-none'"
+    >
+      <div class="row mx-5 h-100">
+        <div class="col">
+          <div class="navbar p-0 h-100">
+            <div class="logo">
+              <a href="#">
+                <img src="/img/logo-img-01.png" alt="" class="logo" />
+              </a>
+            </div>
           </div>
-          <AppNavbar :menuItems="menuItems" :Elements="Elements"></AppNavbar>
+        </div>
+        <div class="col">
+          <AppNavbar
+            :menuItems="menuItems"
+            :Elements="Elements"
+            @change="changetoggle"
+          ></AppNavbar>
+        </div>
+      </div>
+    </div>
+    <!-- searchbar -->
+    <div
+      class="container-fluid search_bar"
+      v-bind:class="!togglesearch ? 'd-none' : 'd-block'"
+    >
+      <div class="row h-100">
+        <div class="col">
+          <div
+            class="h-100 d-flex align-items-center justify-content-between p-4"
+          >
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+            <div @click="changetoggle()">
+              <i class="fa-solid fa-xmark fs-5 mx-2"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </header>
-  <!-- <AppSearch></AppSearch> -->
 </template>
 <style lang="scss">
 header {
-  position: fixed;
+  position: absolute;
   z-index: 3;
+}
+.search_bar {
+  height: 100px;
+  background: white;
+  input {
+    border: none;
+  }
+  i:hover {
+    cursor: pointer;
+    color: #ff4612;
+  }
 }
 </style>
