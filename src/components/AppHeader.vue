@@ -1,10 +1,8 @@
 <script>
 import AppNavbar from "./AppNavbar.vue";
-import AppSearch from "./AppSearch.vue";
 export default {
   components: {
     AppNavbar,
-    AppSearch,
   },
   data() {
     return {
@@ -131,11 +129,13 @@ export default {
 </script>
 <template lang="">
   <header class="w-100">
+    <!-- header with navbar -->
     <div
       class="container-fluid"
       v-bind:class="!togglesearch ? 'd-block' : 'd-none'"
     >
       <div class="row mx-5 h-100">
+        <!-- logo -->
         <div class="col">
           <div class="navbar p-0 h-100">
             <div class="logo">
@@ -145,6 +145,7 @@ export default {
             </div>
           </div>
         </div>
+        <!-- navbar with nav items -->
         <div class="col">
           <AppNavbar
             :menuItems="menuItems"
@@ -164,12 +165,14 @@ export default {
           <div
             class="h-100 d-flex align-items-center justify-content-between p-4"
           >
+            <!-- search -->
             <input
               type="search"
               class="form-control"
               placeholder="Search..."
               aria-label="Search"
             />
+            <!-- closing button -->
             <div @click="changetoggle()">
               <i class="fa-solid fa-xmark fs-5 mx-2"></i>
             </div>

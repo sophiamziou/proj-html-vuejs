@@ -13,6 +13,7 @@ export default {
 <template lang="">
   <nav class="h-100">
     <ul class="nav nav-pills justify-content-end h-100">
+      <!-- 5 first nav items  -->
       <li
         v-for="(item, index) in menuItems"
         :key="index"
@@ -20,6 +21,7 @@ export default {
         class="nav-item mx-2"
       >
         <div class="dropdown_ h-100">
+          <!-- dropdown label -->
           <div class="dropbtn h-100">
             <a
               :href="item.url"
@@ -29,6 +31,7 @@ export default {
               {{ item.label }}
             </a>
           </div>
+          <!-- dropdown content with single items  -->
           <div class="dropdown_content">
             <a v-for="(item, index) in item.sublabel" :key="index" href="#">
               {{ item }}
@@ -36,9 +39,12 @@ export default {
           </div>
         </div>
       </li>
+      <!-- last nav item ELEMENTS -->
       <li class="nav-item mx-2">
         <div class="dropdown_">
+          <!-- dropdown label -->
           <div class="dropbtn menuitem">ELEMENTS</div>
+          <!-- dropdown content with 4 items -->
           <div class="dropdown_content right">
             <div class="container">
               <div class="row">
@@ -47,9 +53,11 @@ export default {
                   v-for="(item, index) in Elements"
                 >
                   <div class="mx-5">
+                    <!-- single item title-->
                     <p class="elem_title">
                       {{ item.title }}
                     </p>
+                    <!-- single item content list -->
                     <ul class="elem_list">
                       <li
                         v-html="item"
@@ -64,6 +72,7 @@ export default {
         </div>
       </li>
       <li class="nav-item mx-2">
+        <!-- search button to change header -->
         <div class="menuitem h-100 position-relative" @click="$emit('change')">
           <i
             class="fa-solid fa-magnifying-glass position-absolute top-50 start-50 translate-middle fs-5"
@@ -74,6 +83,7 @@ export default {
   </nav>
 </template>
 <style lang="scss">
+@use "../styles/partials/variables" as *;
 .logo {
   width: 150px;
 }
@@ -85,77 +95,73 @@ export default {
   line-height: 50px;
 }
 .menuitem:hover {
-  color: #ff4162;
+  color: $orange-color;
   cursor: pointer;
 }
 .active {
-  color: #ff4162;
-}
-.dropbtn {
-  color: black;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+  color: $orange-color;
 }
 
 .dropdown_ {
   position: relative;
   display: inline-block;
+  .dropbtn {
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  .dropdown_content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-color: black;
+    min-width: 250px;
+    padding: 30px 15px;
+    a {
+      color: grey;
+      padding: 6px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    a:hover {
+      color: white;
+    }
+    .elem_title {
+      font-family: "Libre Baskerville", serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .elem_list {
+      color: grey;
+      padding: 0;
+      li {
+        display: flex;
+        list-style: none;
+        margin: 8px 0;
+        a {
+          color: #ccc;
+        }
+        i {
+          color: $orange-color;
+          margin-right: 15px;
+        }
+      }
+      li:hover {
+        cursor: pointer;
+        color: white;
+      }
+    }
+  }
 }
-
-.dropdown_content {
-  display: none;
-  position: absolute;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  background-color: black;
-  min-width: 250px;
-  padding: 30px 15px;
+.dropdown_:hover .dropdown_content {
+  display: block;
 }
 
 .right {
   right: 0;
   width: 900px;
-}
-.dropdown_content a {
-  color: grey;
-  padding: 6px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown_content a:hover {
-  color: white;
-}
-
-.dropdown_:hover .dropdown_content {
-  display: block;
-}
-
-.elem_title {
-  font-family: "Libre Baskerville", serif;
-  font-size: 14px;
-  font-weight: 700;
-}
-.elem_list {
-  color: grey;
-  padding: 0;
-  li {
-    display: flex;
-    list-style: none;
-    margin: 8px 0;
-    a {
-      color: #ccc;
-    }
-    i {
-      color: #ff4612;
-      margin-right: 15px;
-    }
-  }
-  li:hover {
-    cursor: pointer;
-    color: white;
-  }
 }
 </style>

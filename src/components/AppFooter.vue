@@ -42,18 +42,22 @@ export default {
 <template lang="">
   <footer>
     <div class="container-fluid footer">
+      <!-- footer 4 items -->
       <div class="row p-5">
         <div class="col m-2" v-for="(item, index) in footerItems">
+          <!-- item title -->
           <p>
             {{ item.title }}
           </p>
           <div class="line"></div>
+          <!-- item content -->
           <ul>
             <li v-html="item" v-for="(item, index) in item.content"></li>
           </ul>
         </div>
       </div>
     </div>
+    <!-- copyright section -->
     <div class="container-fluid copyright">
       <div class="row">
         <div class="col">
@@ -64,6 +68,7 @@ export default {
   </footer>
 </template>
 <style lang="scss">
+@use "../styles/partials/variables" as *;
 footer {
   .footer {
     background-color: #181515;
@@ -78,7 +83,7 @@ footer {
       margin: 20px 0px;
       width: 32px;
       height: 1px;
-      background-color: #ff4612;
+      background-color: $orange-color;
     }
     ul {
       color: grey;
@@ -91,7 +96,7 @@ footer {
           color: #ccc;
         }
         i {
-          color: #ff4612;
+          color: $orange-color;
           margin-right: 15px;
         }
       }
@@ -101,7 +106,7 @@ footer {
     }
   }
   .copyright {
-    background-color: #ff4612;
+    background-color: $orange-color;
 
     line-height: 50px;
     text-align: center;

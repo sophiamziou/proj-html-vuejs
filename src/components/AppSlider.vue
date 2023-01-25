@@ -55,10 +55,11 @@ export default {
   <div class="container-fluid p-0">
     <div class="slider-wrapper" tabindex="0">
       <div class="item">
-        <!-- <img src="/public/img/h1-blog-img-01.jpg" alt="" /> -->
         <img v-bind:src="slides[activeImage].image" v-bind:alt="slides.title" />
         <div class="text">
-          <h1 class="my-4">{{ slides[activeImage].title }}</h1>
+          <h1 class="my-4">
+            {{ slides[activeImage].title }}<span class="orange_dot">.</span>
+          </h1>
           <p class="fs-4">
             {{ slides[activeImage].text }}
           </p>
@@ -72,6 +73,7 @@ export default {
   </div>
 </template>
 <style lang="scss">
+@use "../styles/partials/variables" as *;
 .container {
   display: flex;
   justify-content: center;
@@ -83,34 +85,40 @@ export default {
   width: 100%;
   height: 100vh;
   position: relative;
-}
-
-.item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.item .text {
-  position: absolute;
-  top: 45%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  text-align: left;
-  color: black;
-  button {
-    margin: 20px;
-    height: 50px;
-    width: 150px;
-    border: none;
-    color: black;
-    background-color: white;
-    font-weight: 700;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  .orange {
-    color: white;
-    background-color: #ff4612;
+  .text {
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    text-align: left;
+    color: black;
+    h1 {
+      font-family: "Libre Baskerville", serif;
+      font-size: 70px;
+      font-weight: 700;
+    }
+    button {
+      margin: 20px;
+      height: 50px;
+      width: 150px;
+      border: none;
+      color: black;
+      background-color: white;
+      font-weight: 700;
+    }
+    .orange {
+      color: white;
+      background-color: $orange-color;
+    }
+    .orange_dot {
+      color: $orange-color;
+    }
   }
 }
 
@@ -131,11 +139,5 @@ export default {
 
 .next {
   right: 5%;
-}
-
-h1 {
-  font-family: "Libre Baskerville", serif;
-  font-size: 70px;
-  font-weight: 700;
 }
 </style>
