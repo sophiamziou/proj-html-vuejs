@@ -1,13 +1,20 @@
 <script>
-export default {};
+import AppSlider from "./AppSlider.vue";
+export default {
+  components: {
+    AppSlider,
+  },
+};
 </script>
 <template lang="">
-  <main></main>
+  <main>
+    <AppSlider></AppSlider>
+  </main>
 </template>
 <style lang="scss">
 main {
   background-color: lightcyan;
-  height: 700px;
+  height: 100vh;
   h1 {
     margin: 0;
   }

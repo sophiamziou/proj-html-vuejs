@@ -46,7 +46,7 @@ export default {
                   class="col text-light w-100"
                   v-for="(item, index) in Elements"
                 >
-                  <div>
+                  <div class="mx-5">
                     <p class="elem_title">
                       {{ item.title }}
                     </p>
@@ -116,7 +116,7 @@ export default {
 
 .right {
   right: 0;
-  width: 90vw;
+  width: 900px;
 }
 .dropdown_content a {
   color: grey;
@@ -155,6 +155,7 @@ export default {
   }
   li:hover {
     cursor: pointer;
+    color: white;
   }
 }
 </style>

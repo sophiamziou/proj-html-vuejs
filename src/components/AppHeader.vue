@@ -122,7 +122,9 @@ export default {
     };
   },
   methods: {
-    changeHeader() {},
+    changeHeader() {
+      this.AppSearch.style.display = "none";
+    },
   },
 };
 </script>
@@ -141,12 +143,11 @@ export default {
       </div>
     </div>
   </header>
-  <AppSearch></AppSearch>
+  <!-- <AppSearch></AppSearch> -->
 </template>
 <style lang="scss">
 header {
   position: fixed;
   z-index: 3;
-  background-color: rgba(0, 0, 0, 0.292);
 }
 </style>
