@@ -11,16 +11,16 @@ export default {
 </script>
 
 <template lang="">
-  <nav>
-    <ul class="nav nav-pills">
+  <nav class="h-100">
+    <ul class="nav nav-pills h-100">
       <li
         v-for="(item, index) in menuItems"
         :key="index"
         :class="item.active ? 'active' : ' '"
         class="nav-item mx-2"
       >
-        <div class="dropdown_">
-          <div class="dropbtn">
+        <div class="dropdown_ h-100">
+          <div class="dropbtn h-100">
             <a
               :href="item.url"
               :class="item.active ? 'active' : ' '"
@@ -98,7 +98,7 @@ export default {
   border: none;
 }
 
-.dropdown {
+.dropdown_ {
   position: relative;
   display: inline-block;
 }

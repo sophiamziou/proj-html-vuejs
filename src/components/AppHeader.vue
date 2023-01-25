@@ -1,6 +1,11 @@
 <script>
 import AppNavbar from "./AppNavbar.vue";
+import AppSearch from "./AppSearch.vue";
 export default {
+  components: {
+    AppNavbar,
+    AppSearch,
+  },
   data() {
     return {
       menuItems: [
@@ -116,16 +121,16 @@ export default {
       ],
     };
   },
-  components: {
-    AppNavbar,
+  methods: {
+    changeHeader() {},
   },
 };
 </script>
 <template lang="">
   <header class="container-fluid">
-    <div class="row mx-5">
+    <div class="row mx-5 h-100">
       <div class="col">
-        <div class="navbar p-0">
+        <div class="navbar p-0 h-100">
           <div class="logo">
             <a href="#">
               <img src="/img/logo-img-01.png" alt="" class="logo" />
@@ -136,10 +141,12 @@ export default {
       </div>
     </div>
   </header>
+  <AppSearch></AppSearch>
 </template>
 <style lang="scss">
 header {
   position: fixed;
   z-index: 3;
+  background-color: rgba(0, 0, 0, 0.292);
 }
 </style>
